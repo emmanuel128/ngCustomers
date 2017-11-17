@@ -1,8 +1,7 @@
 # NgCustomers
 
 > Simple customer manager frontend developed with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0., to be used with a [.Net Web API]().
-> Reference: [Brad Traversy] (https://github.com/bradtraversy/vcustomers)
-This project was generated with 
+> Reference: [Brad Traversy](https://github.com/bradtraversy/vcustomers) 
 
 ## Development server
 
