@@ -1,0 +1,53 @@
+<div class="add container">
+    <!-- <Alert v-if="alert" v-bind:message="alert" /> -->
+    <h1 class="page-header">Edit Customer</h1>
+    <form #customerForm="ngForm">
+        <div class="well">
+            <h4>Customer Info</h4>
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control" placeholder="First Name" [ngModelOptions]="{standalone: true}" [(ngModel)]="customer.FirstName" [ngModelOptions]="{standalone: true}" maxlength="20" required>
+            </div>
+            <div class="form-group">
+                <label>Initial</label>
+                <input type="text" class="form-control" placeholder="Initial (optional)" maxlength="1" [ngModelOptions]="{standalone: true}" [(ngModel)]="customer.Initial">
+            </div> 
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" placeholder="Last Name" maxlength="50" [ngModelOptions]="{standalone: true}" [(ngModel)]="customer.LastName" required>
+            </div>
+        </div>
+        <div class="well">
+            <h4>Customer Contact</h4>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" placeholder="Email" maxlength="50" [ngModelOptions]="{standalone: true}" [(ngModel)]="customer.Email" required>
+            </div>
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="phone" class="form-control" placeholder="Phone" maxlength="8" [ngModelOptions]="{standalone: true}" [(ngModel)]="customer.Phone" required>
+            </div>
+        </div>
+
+        <div class="well">
+            <h4>Customer Location</h4>
+            <div class="form-group">
+                <label>Address</label>
+                <input type="text" class="form-control" placeholder="Address" maxlength="50" [ngModelOptions]="{standalone: true}" [(ngModel)]="customer.Address" required>
+            </div>
+            <div class="form-group">
+                <label>City</label>
+                <input type="text" class="form-control" placeholder="City" maxlength="20" [ngModelOptions]="{standalone: true}" [(ngModel)]="customer.City" required>
+            </div>
+            <div class="form-group">
+                <label>State</label>
+                <input type="text" class="form-control" placeholder="State" maxlength="2" [ngModelOptions]="{standalone: true}" [(ngModel)]="customer.State" required>
+            </div>
+            <div class="form-group">
+                <label>Zip Code</label>
+                <input type="text" class="form-control" placeholder="Zip Code" maxlength="5" [ngModelOptions]="{standalone: true}" [(ngModel)]="customer.ZipCode" required>
+            </div>
+        </div>
+        <button type="submit" (click)="editCustomer()" class="btn btn-primary">Submit</button>
+    </form>
+</div>
