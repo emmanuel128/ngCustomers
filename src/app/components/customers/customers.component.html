@@ -1,6 +1,6 @@
 <div class="container">
   <h1 class="page-header">Manage Customers</h1>
-  <input class="form-control" type="text" placeholder="Enter Name">
+  <input class="form-control" [(ngModel)]="filterInput" type="text" placeholder="Enter Name">
   <br>
   <div class="table-responsive">
     <table class="table table-striped">
@@ -11,7 +11,8 @@
         <th></th>
       </thead>
       <tbody>
-        <tr *ngFor="let customer of Customers">
+        <tr *ngFor="let customer of filterBy(Customers, filterInput)">
+        <!-- <tr *ngFor="let customer of Customers"> -->
           <td>{{customer.FirstName}}</td>
           <td>{{customer.LastName}}</td>
           <td>{{customer.Email}}</td>

@@ -10,10 +10,12 @@ import { CustomersService } from '../../services/customers.service'
 export class CustomersComponent implements OnInit {
   
   Customers: any[];
+  filterInput: string = "";
 
   constructor(private customerService:CustomersService) { }
 
   ngOnInit() {
+    // console.log(this.filterInput)
     this.customerService.getCustomers()
       .subscribe((customers)=>{
         // console.log("ngOnInit: ", customers);
@@ -21,6 +23,16 @@ export class CustomersComponent implements OnInit {
       });
   }
 
+  filterBy(list, value){
+    // console.log(value);
+    value = value.toUpperCase();
+    return list.filter(function(customer){
+      return customer.FirstName.toUpperCase().includes(value) ||
+             customer.LastName.toUpperCase().includes(value) ||
+             customer.Email.toUpperCase().includes(value)
+      // return ( customer.LastName.toUpperCase().indexOf(value) || customer.FirstName.toUpperCase().indexOf(value) ) > -1;
+    });
+  }
 }
 
 interface Customers{
