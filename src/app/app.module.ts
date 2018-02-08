@@ -13,14 +13,17 @@ import { CustomerEditComponent } from './components/customer-edit/customer-edit.
 import { AboutComponent } from './components/about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 const routes: Routes = [
   { path: '', component: CustomersComponent },
+  { path: 'home', component: CustomersComponent },
   { path: 'add', component: CustomerAddComponent },
   { path: 'details/:id', component: CustomerDetailsComponent },
   { path: 'edit/:id', component: CustomerEditComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'about2/:id', component: AboutComponent }
+  { path: 'about2/:id', component: AboutComponent },
+  { path: 'calendar', component: CalendarComponent }
 ];
 
 
@@ -33,6 +36,7 @@ const routes: Routes = [
     CustomerEditComponent,
     NavbarComponent,
     AboutComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule, FormsModule, HttpModule, AppRoutingModule, RouterModule.forRoot(routes)
