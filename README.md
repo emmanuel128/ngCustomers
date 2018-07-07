@@ -5,3 +5,17 @@
 For a live demo [click here](https://ngcustomers-invid.firebaseapp.com/)
 
 Reference: [Brad Traversy](https://github.com/bradtraversy/vcustomers) 
+
+
+## Installation
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload
+npm start
+
+# build for production with minification
+npm run build
+```
