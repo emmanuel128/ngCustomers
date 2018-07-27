@@ -1,11 +1,17 @@
 {
   "name": "ng-customers",
-  "version": "0.0.0",
+  "version": "2.0.0",
   "license": "MIT",
+  "author": {
+    "name": "Emmanuel D. Castro Soto",
+    "email": "emmanuel.castro@upr.edu",
+    "url": "https://github.com/emmanuel128"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
+    "deploy": "ng build --prod && firebase deploy",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

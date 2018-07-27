@@ -11,19 +11,7 @@ export class Customer {
     public City: string,
     public State: string,
     public ZipCode: string,
+    public _id?: string
   ) { }
 
-}
-
-export interface NodeCustomer {
-  _id: number,
-  FirstName: string,
-  Initial?: string,
-  LastName: string,
-  Email: string,
-  Phone: string,
-  Address: string,
-  City: string,
-  State: string,
-  ZipCode: string,
 }

@@ -9,20 +9,16 @@ nav.navbar.navbar-inverse.navbar-fixed-top
             a.navbar-brand(href='#') ngCustomers
         #navbar.collapse.navbar-collapse
             ul.nav.navbar-nav
-                // <li><a routerLink="/about2/2">About2</a> </li>
                 li([ngClass]="{active: activeRoute('dotnet')}")
                     a([routerLink]="['/dotnet']") .NET
-                //- li([ngClass]="{active: activeRoute('nodejs')}")
+                li([ngClass]="{active: activeRoute('nodejs')}")
                     a([routerLink]="['/nodejs']") Node.js
                 li([ngClass]="{active: activeRoute('/about')}")
                     a([routerLink]="['/about']") About
                 li([ngClass]="{active: activeRoute('/calendar')}")
                     a([routerLink]="['/calendar']") Full Calendar
-                // <li><router-link to="/">Home</router-link></li>
-                // <li><router-link to="/about">About</router-link></li>
             ul.nav.navbar-nav.navbar-right
                 li([ngClass]="{active: activeRoute('/add')}")
-                    a([routerLink]="['/add']") Add Customer
-                // <li><router-link to="/add">Add Customer</router-link></li>
+                    a([routerLink]="['add']") Add Customer
         // /.nav-collapse
 br

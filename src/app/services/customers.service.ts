@@ -6,34 +6,52 @@ import { Http } from '@angular/http';
 @Injectable()
 export class CustomersService {
 
-  public url: string = 'https://vcustomers-api.azurewebsites.net/api/'
+	private url: string = 'https://vcustomers-api.azurewebsites.net/api'
 
-  constructor(public http: Http) { }
+	constructor(public http: Http) { }
 
-  getCustomers() {
-    return this.http.get(`${this.url}customers`)
-      .toPromise()
-      .then(res => res.json());
-  }
+	getCustomers(url?) {
+		if (url) {
+			this.url = url
+		}
+		return this.http.get(`${this.url}/customers`)
+			.toPromise()
+			.then(res => res.json());
+	}
 
-  getCustomerById(id) {
-    return this.http.get(`${this.url}customers/${id}`)
-      .toPromise()
-      .then(res => res.json());
-  }
+	getCustomerById(id, url?: string) {
+		if (url) {
+			this.url = url
+		}
+		return this.http.get(`${this.url}/customers/${id}`)
+			.toPromise()
+			.then(res => res.json());
+	}
 
-  postCustomer(customer) {
-    return this.http.post(`${this.url}customers/`, customer)
-    .toPromise();
-  }
+	postCustomer(customer, url?: string) {
+		if (url) {
+			this.url = url
+		}
+		return this.http.post(`${this.url}/customers/`, customer)
+			.toPromise()
+			.then(res => res.json());
+	}
 
-  putCustomer(customer) {
-    return this.http.put(`${this.url}customers/` + customer.CustomerID, customer)
-    .toPromise();
-  }
+	putCustomer(customer, url?: string) {
+		if (url) {
+			this.url = url
+		}
+		return this.http.put(`${this.url}/customers/${customer.CustomerID}`, customer)
+			.toPromise()
+			.then(res => res.json());
+	}
 
-  deleteCustomer(id) {
-    return this.http.delete(`${this.url}customers/` + id)
-    .toPromise();
-  }
+	deleteCustomer(id, url?: string) {
+		if (url) {
+			this.url = url
+		}
+		return this.http.delete(`${this.url}/customers/${id}`)
+			.toPromise()
+			.then(res => res.json());
+	}
 }

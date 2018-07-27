@@ -15,32 +15,41 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'dotnet' },
-  { path: 'dotnet', component: CustomersComponent },
-  { path: 'add', component: CustomerAddComponent },
-  { path: 'details/:id', component: CustomerDetailsComponent },
-  { path: 'edit/:id', component: CustomerEditComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'about2/:id', component: AboutComponent },
-  { path: 'calendar', component: CalendarComponent }
+	{ path: '', pathMatch: 'full', redirectTo: 'dotnet' }, // default
+
+	// .NET
+	{ path: 'dotnet', component: CustomersComponent },
+	{ path: 'dotnet/add', component: CustomerAddComponent },
+	{ path: 'dotnet/details/:id', component: CustomerDetailsComponent },
+	{ path: 'dotnet/edit/:id', component: CustomerEditComponent },
+
+	// Node.js
+	{ path: 'nodejs', component: CustomersComponent },
+	{ path: 'nodejs/add', component: CustomerAddComponent },
+	{ path: 'nodejs/details/:id', component: CustomerDetailsComponent },
+	{ path: 'nodejs/edit/:id', component: CustomerEditComponent },
+
+	// General
+	{ path: 'about', component: AboutComponent },
+	{ path: 'calendar', component: CalendarComponent }
 ];
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CustomersComponent,
-    CustomerAddComponent,
-    CustomerDetailsComponent,
-    CustomerEditComponent,
-    NavbarComponent,
-    AboutComponent,
-    CalendarComponent,
-  ],
-  imports: [
-    BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(routes)
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		CustomersComponent,
+		CustomerAddComponent,
+		CustomerDetailsComponent,
+		CustomerEditComponent,
+		NavbarComponent,
+		AboutComponent,
+		CalendarComponent,
+	],
+	imports: [
+		BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(routes)
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

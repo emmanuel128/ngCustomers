@@ -4,7 +4,7 @@
         | {{ customer?.FirstName }} {{customer?.LastName}}
         span.pull-right
             //- route edit
-            a.btn.btn-primary(routerLink='/edit/{{customer?.CustomerID}}') Edit
+            a.btn.btn-primary(routerLink='../../edit/{{customer?.CustomerID}}') Edit
             button.btn.btn-danger((click)='deleteCustomer(customer?.CustomerID)') Delete
     ul.list-group
         li.list-group-item
