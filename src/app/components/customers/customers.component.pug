@@ -1,5 +1,7 @@
 .container
-    h1.page-header Manage Customers
+    div
+        h1.page-header Manage Customers &nbsp;
+            button.btn.btn-primary([routerLink]="['add']") Add
     input.form-control([(ngModel)]='filterInput', type='text', placeholder='Enter Name')
     br
     .table-responsive
