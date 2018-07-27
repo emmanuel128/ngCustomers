@@ -1,0 +1,37 @@
+.add.container
+    h1.page-header Edit Customer
+    form(#customerForm='ngForm')
+        .well
+            h4 Customer Info
+            .form-group
+                label First Name
+                input.form-control(type='text', placeholder='First Name', [ngModelOptions]='{standalone: true}', [(ngModel)]='customer.FirstName', maxlength='20', required='')
+            .form-group
+                label Initial
+                input.form-control(type='text', placeholder='Initial (optional)', maxlength='1', [ngModelOptions]='{standalone: true}', [(ngModel)]='customer.Initial')
+            .form-group
+                label Last Name
+                input.form-control(type='text', placeholder='Last Name', maxlength='50', [ngModelOptions]='{standalone: true}', [(ngModel)]='customer.LastName', required='')
+        .well
+            h4 Customer Contact
+            .form-group
+                label Email
+                input.form-control(type='text', placeholder='Email', maxlength='50', [ngModelOptions]='{standalone: true}', [(ngModel)]='customer.Email', required='')
+            .form-group
+                label Phone
+                input.form-control(type='phone', placeholder='Phone', maxlength='10', [ngModelOptions]='{standalone: true}', [(ngModel)]='customer.Phone', required='')
+        .well
+            h4 Customer Location
+            .form-group
+                label Address
+                input.form-control(type='text', placeholder='Address', maxlength='50', [ngModelOptions]='{standalone: true}', [(ngModel)]='customer.Address', required='')
+            .form-group
+                label City
+                input.form-control(type='text', placeholder='City', maxlength='20', [ngModelOptions]='{standalone: true}', [(ngModel)]='customer.City', required='')
+            .form-group
+                label State
+                input.form-control(type='text', placeholder='State', maxlength='2', [ngModelOptions]='{standalone: true}', [(ngModel)]='customer.State', required='')
+            .form-group
+                label Zip Code
+                input.form-control(type='text', placeholder='Zip Code', maxlength='5', [ngModelOptions]='{standalone: true}', [(ngModel)]='customer.ZipCode', required='')
+        button.btn.btn-primary(type='submit', (click)='editCustomer()') Submit

@@ -3,7 +3,7 @@ import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
+  templateUrl: './navbar.component.pug',
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {

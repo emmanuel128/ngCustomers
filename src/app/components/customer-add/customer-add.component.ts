@@ -5,10 +5,10 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-add',
-  templateUrl: './customer-add.component.html',
+  templateUrl: './customer-add.component.pug',
   styleUrls: ['./customer-add.component.css'],
   providers: [CustomersService]
-  
+
 })
 export class CustomerAddComponent implements OnInit {
 
@@ -22,14 +22,14 @@ export class CustomerAddComponent implements OnInit {
   // Email: string; Phone: string; Address: string;
   // City: string; State: string; ZipCode: string
 
-  customer = new Customer(0, '', '','','','','','','','');
-  
-  constructor(private customerService:CustomersService, private router: Router) { }
+  customer = new Customer(0, '', '', '', '', '', '', '', '', '');
+
+  constructor(private customerService: CustomersService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  addCustomer(){
+  addCustomer() {
 
     this.customer = new Customer(0, this.customer.FirstName, this.customer.Initial,
       this.customer.LastName, this.customer.Email, this.customer.Phone,
@@ -39,9 +39,9 @@ export class CustomerAddComponent implements OnInit {
 
     // this.router.navigate(['']);
     this.customerService.postCustomer(this.customer)
-      .subscribe((resp)=>{
+      .then((resp) => {
         console.log(resp);
-        if(resp.status == 201){
+        if (resp.status == 201) {
           this.router.navigate(['']);
         }
       });

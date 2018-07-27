@@ -12,12 +12,11 @@ import { CustomerDetailsComponent } from './components/customer-details/customer
 import { CustomerEditComponent } from './components/customer-edit/customer-edit.component';
 import { AboutComponent } from './components/about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { AppRoutingModule } from './/app-routing.module';
 import { CalendarComponent } from './components/calendar/calendar.component';
 
 const routes: Routes = [
-  { path: '', component: CustomersComponent },
-  { path: 'home', component: CustomersComponent },
+  { path: '', pathMatch: 'full', redirectTo: 'dotnet' },
+  { path: 'dotnet', component: CustomersComponent },
   { path: 'add', component: CustomerAddComponent },
   { path: 'details/:id', component: CustomerDetailsComponent },
   { path: 'edit/:id', component: CustomerEditComponent },
@@ -39,7 +38,7 @@ const routes: Routes = [
     CalendarComponent,
   ],
   imports: [
-    BrowserModule, FormsModule, HttpModule, AppRoutingModule, RouterModule.forRoot(routes)
+    BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

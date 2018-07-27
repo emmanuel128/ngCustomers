@@ -1,32 +1,39 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 // import { catchError, map, tap } from 'rxjs/operators';
-import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CustomersService {
 
-  constructor(public http:Http) { }
+  public url: string = 'https://vcustomers-api.azurewebsites.net/api/'
 
-  getCustomers(){
-    return this.http.get('https://vcustomers-api.azurewebsites.net/api/customers')
-      .map(res => res.json());
+  constructor(public http: Http) { }
+
+  getCustomers() {
+    return this.http.get(`${this.url}customers`)
+      .toPromise()
+      .then(res => res.json());
   }
 
-  getCustomerById(id){
-    return this.http.get('https://vcustomers-api.azurewebsites.net/api/customers/' + id)
-      .map(res => res.json());
+  getCustomerById(id) {
+    return this.http.get(`${this.url}customers/${id}`)
+      .toPromise()
+      .then(res => res.json());
   }
 
-  postCustomer(customer){
-    return this.http.post('https://vcustomers-api.azurewebsites.net/api/customers/', customer);
+  postCustomer(customer) {
+    return this.http.post(`${this.url}customers/`, customer)
+    .toPromise();
   }
 
-  putCustomer(customer){
-    return this.http.put('https://vcustomers-api.azurewebsites.net/api/customers/' + customer.CustomerID, customer);
+  putCustomer(customer) {
+    return this.http.put(`${this.url}customers/` + customer.CustomerID, customer)
+    .toPromise();
   }
 
-  deleteCustomer(id){
-    return this.http.delete('https://vcustomers-api.azurewebsites.net/api/customers/' + id);
+  deleteCustomer(id) {
+    return this.http.delete(`${this.url}customers/` + id)
+    .toPromise();
   }
 }
